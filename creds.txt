@@ -2,14 +2,21 @@ H0opla!          (Administrator)
 MyLint0n         (SgtCrell)     
                  (Guest)
 
-### john:
+**John:**  
 ```bash
 echo "hashdumpoutput" > creds.txt
 john --format=NT creds.txt
-```
-### hashcat:
-``` bash
-sudo gunzip /usr/share/wordlists/rockyou.txt.gz
+```  
+**Hashcat:**
+```bash
 echo "hashdumpoutput" > creds.txt
-hashcat -m 1000 -a 0 text.txt /usr/share/wordlists/rockyou.txt 
+
+sudo gunzip /usr/share/wordlists/rockyou.txt.gz
+# By default kali has the rockyou.txt password dictionary, but its archived in gzip
+
+hashcat -m 1000 -a 0 text.txt /usr/share/wordlists/rockyou.txt
+# Dictionary attack
+
+hashcat -m 1000 -a 3 text.txt ?a?a?a?a?a?a?a?a
+# Brute-force attack
 ```

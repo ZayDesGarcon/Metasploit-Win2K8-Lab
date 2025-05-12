@@ -1,1 +1,15 @@
+H0opla!          (Administrator)     
+MyLint0n         (SgtCrell)     
+                 (Guest)
 
+### john:
+```bash
+echo "hashdumpoutput" > creds.txt
+john --format=NT creds.txt
+```
+### hashcat:
+``` bash
+sudo gunzip /usr/share/wordlists/rockyou.txt.gz
+echo "hashdumpoutput" > creds.txt
+hashcat -m 1000 -a 0 text.txt /usr/share/wordlists/rockyou.txt 
+```
